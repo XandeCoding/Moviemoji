@@ -19,10 +19,11 @@ const init = async () => {
       plugin: HapiSequelize,
       options: [
         {
-          name: 'postgres',
-          models: [Path.join(__dirname, '/models/*.js')],
+          name: 'moviemoji',
+          models: [__dirname +'/schemas/**/*.js'],
           sequelize: sequelizeDB,
-          sync: true
+          sync: true,
+          forceSync: true
         }
       ]
     }

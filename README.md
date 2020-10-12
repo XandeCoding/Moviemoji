@@ -15,8 +15,7 @@ Um projeto que propõe uma forma de avaliar filmes de forma diferente focado em 
 
 ## **Instalação**
 
-Rodar banco de dados via docker: _**docker run --name moviemoji -e POSTGRES_PASSWORD=moviemoji -p
-5432:5432 -d postgres**_
+Rodar banco de dados via docker: _**docker run --name moviemoji -e POSTGRES_PASSWORD=moviemoji -p 5432:5432 -d postgres**_
 
 User: postgres
 Password: moviemoji

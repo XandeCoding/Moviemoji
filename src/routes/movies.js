@@ -1,7 +1,7 @@
 const movieRouter = [];
 
-movieRouter.push({ method: 'GET', path: '/', handler: (request, h) => {
-    return 'Hello World!'
+movieRouter.push({ method: 'GET', path: '/', handler: async () => {
+    return await Promise.resolve('Hello World!')
   }
 })
 
