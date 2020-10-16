@@ -57,6 +57,6 @@ npm start
 ## **Integrantes do grupo:**
 - Alexandre Fernandes *(XandeCoding)*
 - Arthur Castro *(arthur-es)*
-- Fabiano Gomes *(@fabianogomess)*
+- Fabiano Gomes *(fabianogomess)*
 - Miguel *(miguelfesanbar)*
 - Raul Victor *(raulvdias)*
