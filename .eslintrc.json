@@ -12,6 +12,10 @@
     },
     "rules": {
         "comma-dangle": ["error", "never"],
-        "semi": 0
+        "semi": 0,
+        "max-len": ["error", {
+            "code": 130,
+            "ignoreUrls": true
+        }]
     }
 }
