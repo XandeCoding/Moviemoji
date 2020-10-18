@@ -1,9 +1,5 @@
 const environment = {
-  DATABASE_USERNAME: process.env.DATABASE_USERNAME || 'postgres',
-  DATABASE_PASSWORD: process.env.DATABASE_PASSWORD || 'moviemoji',
-  DATABASE_HOST: process.env.DATABASE_HOST || '127.0.0.1',
-  DATABASE_PORT: process.env.DATABASE_PORT || '5432',
-  DATABASE_NAME: process.env.DATABASE_NAME || 'postgres'
+  DATABASE_URL: process.env.DATABASE_URL || 'postgres://postgres:moviemoji@127.0.0.1:5432/postgres'
 }
 
 module.exports = environment

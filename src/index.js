@@ -10,12 +10,7 @@ const server = Hapi.server({
   host: 'localhost'
 })
 
-const sequelizeDB = new Sequelize(environment.DATABASE_NAME, environment.DATABASE_USERNAME, environment.DATABASE_PASSWORD, {
-  dialect: 'postgres',
-  host: environment.DATABASE_HOST,
-  port: environment.DATABASE_PORT,
-  ssl: true
-})
+const sequelizeDB = new Sequelize(environment.DATABASE_URL)
 
 const init = async () => {
   await server.register([
@@ -24,7 +19,7 @@ const init = async () => {
       options: [
         {
           name: 'moviemoji',
-          models: [join(__dirname, '/schemass/**/*.js')],
+          models: [join(__dirname, '/schemas/**/*.js')],
           sequelize: sequelizeDB,
           sync: true,
           forceSync: true
