@@ -12,7 +12,10 @@ const server = Hapi.server({
 
 const sequelizeDB = new Sequelize(environment.DATABASE_URL, {
   dialectOptions: {
-    ssl: true
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    }
   }
 })
 
