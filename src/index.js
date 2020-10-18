@@ -7,7 +7,7 @@ const environment = require('./environment')
 
 const server = Hapi.server({
   port: 3000,
-  host: 'localhost'
+  host: '0.0.0.0'
 })
 
 const sequelizeDB = new Sequelize(environment.DATABASE_URL, {
