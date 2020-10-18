@@ -12,7 +12,7 @@ const server = Hapi.server({
 
 const sequelizeDB = new Sequelize(environment.DATABASE_NAME, environment.DATABASE_USERNAME, environment.DATABASE_PASSWORD, {
   dialect: 'postgres',
-  host: environment.DATABASE_URL,
+  host: environment.DATABASE_HOST,
   port: environment.DATABASE_PORT
 })
 
