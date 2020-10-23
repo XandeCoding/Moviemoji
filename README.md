@@ -22,7 +22,7 @@ Um projeto que propõe uma forma de avaliar filmes de forma diferente focado em 
 
 **Link para os casos de uso:** https://app.lucidchart.com/lucidchart/b4e434c7-d5e3-498c-b430-1f59af9b7c90/edit?shared=true&page=0_0#?folder_id=home&browser=icon
 
-**Link para o diagrama do banco de dados:** https://drive.google.com/file/d/1DtjETd9fKFGKnh5_xHndFDJgwXbEl62t/view?usp=sharing
+**Link para o diagrama do banco de dados:** https://drive.google.com/file/d/1Xu7ayw15uj91uBh_0sFqL1hSs1KsOqio/view?usp=sharing
 
 **Link para o Front-end:** https://github.com/arthur-es/Moviemoji
 
