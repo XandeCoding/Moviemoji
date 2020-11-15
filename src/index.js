@@ -10,15 +10,7 @@ const server = Hapi.server({
   host: '0.0.0.0'
 })
 
-const sequelizeDB = new Sequelize(environment.DATABASE_URL, {
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false
-    }
-  }
-})
-
+const sequelizeDB = new Sequelize(environment.DATABASE_URL)
 const init = async () => {
   await server.register([
     {
