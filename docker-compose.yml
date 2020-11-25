@@ -19,7 +19,7 @@ services:
     image: postgres:13
     restart: unless-stopped
     volumes:
-      - postgres-data:/data
+      - ./data/postgres:/var/lib/postgresql/data
     ports:
       - 5432:5432
     environment:
@@ -38,9 +38,6 @@ services:
       - ./sonic/store/:/var/lib/sonic/store/
     networks:
       - app-net
-
-volumes:
-  postgres-data:
 
 networks:
   app-net:
