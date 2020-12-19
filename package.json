@@ -23,7 +23,7 @@
   "dependencies": {
     "@hapi/hapi": "^20.0.2",
     "hapi-auto-route": "^3.0.4",
-    "knex": "^0.21.12",
+    "knex": "^0.21.14",
     "objection": "^2.2.3",
     "pg": "^8.5.1"
   },
