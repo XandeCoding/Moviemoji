@@ -4,8 +4,9 @@ const movieRouter = [];
 
 movieRouter.push({
   method: 'GET',
-  path: '/',
+  path: '/movies/:id',
   handler: async () => Database.Model('Movie').create({ nome: 'teste' })
 })
+
 
 module.exports = movieRouter

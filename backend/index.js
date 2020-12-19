@@ -17,11 +17,6 @@ const init = async () => {
     }
   })
 
-  Database.ready(async () => {
-    console.log('Database is ready')
-    console.log("database", Database);
-    Database.Model.movie.find(1)
-  })
 
   await server.start()
 
