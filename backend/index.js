@@ -15,7 +15,6 @@ const init = async () => {
     }
   })
 
-
   await server.start()
 
   console.log('Server running on ', server.info.uri)

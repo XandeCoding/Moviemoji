@@ -1,15 +1,14 @@
-/* eslint-disable global-require */
-const { Model } = require('objection')
 const Knex = require('knex')
+const path = require('path')
 
-const knex = Knex({
+const options = {
   client: 'sqlite3',
   useNullAsDefault: true,
   connection: {
-    filename: 'dev.sqlite3'
+    filename: path.join(__dirname, '/../../dev.sqlite3')
   }
-})
+}
 
-const Database = Model.knex(knex)
+const Database = Knex(options)
 
 module.exports = Database

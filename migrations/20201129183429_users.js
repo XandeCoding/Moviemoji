@@ -7,7 +7,6 @@ exports.up = (knex) => knex.schema.createTable('users', (table) => {
 
   table.integer('userGradeId')
     .references('userGrades.id')
-    .notNullable()
     .onDelete('CASCADE')
 });
 

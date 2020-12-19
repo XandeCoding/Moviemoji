@@ -11,10 +11,10 @@
         "sourceType": "module"
     },
     "rules": {
-        "comma-dangle": ["error", "never"],
         "semi": 0,
+        "comma-dangle": ["error", "never"],
         "max-len": ["error", {
-            "code": 130,
+            "code": 90,
             "ignoreUrls": true
         }]
     }
