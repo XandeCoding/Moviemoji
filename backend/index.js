@@ -3,8 +3,7 @@ const { join } = require('path')
 const HapiRouter = require('hapi-auto-route')
 
 const server = Hapi.server({
-  port: 3000,
-  host: '0.0.0.0'
+  port: 3000
 })
 
 const init = async () => {
