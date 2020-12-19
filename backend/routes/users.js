@@ -1,28 +1,28 @@
-const movieRouter = [];
+const userRouter = [];
 
-movieRouter.push({
+userRouter.push({
   method: 'POST',
-  path: '/movies/{id}',
+  path: '/users/{id}',
   handler: async () => { return 'teste' }
 })
 
-movieRouter.push({
+userRouter.push({
   method: 'GET',
-  path: '/movies/{id}',
+  path: '/users/{id}',
   handler: async () => { return 'teste' }
 })
 
-movieRouter.push({
+userRouter.push({
   method: 'DELETE',
-  path: '/movies/{id}',
+  path: '/users/{id}',
   handler: async () => { return 'teste' }
 })
 
-movieRouter.push({
+userRouter.push({
   method: 'PUT',
-  path: '/movies/{id}',
+  path: '/users/{id}',
   handler: async () => { return 'teste' }
 })
 
 
-module.exports = movieRouter
+module.exports = userRouter
