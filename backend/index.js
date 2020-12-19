@@ -1,7 +1,6 @@
 const Hapi = require('@hapi/hapi')
 const { join } = require('path')
 const HapiRouter = require('hapi-auto-route')
-const Database = require('./configs/database')
 
 const server = Hapi.server({
   port: 3000,
