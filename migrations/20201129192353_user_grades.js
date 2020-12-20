@@ -1,4 +1,4 @@
-exports.up = (knex) => knex.schema.createTable('userGrades', (table) => {
+exports.up = (knex) => knex.schema.createTable('grades', (table) => {
   table.increments('id').primary();
   table.string('grade').notNullable();
 

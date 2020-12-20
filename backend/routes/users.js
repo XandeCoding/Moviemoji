@@ -30,5 +30,4 @@ userRouter.push({
   handler: async () => { return 'teste' }
 })
 
-
 module.exports = userRouter
