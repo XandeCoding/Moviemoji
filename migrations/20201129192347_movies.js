@@ -4,10 +4,6 @@ exports.up = (knex) => knex.schema.createTable('movies', (table) => {
   table.string('description', 120).notNullable();
   table.string('gender', 15).notNullable();
   table.string('image');
-
-  table.integer('movieGradeId')
-    .references('userGrades.id')
-    .onDelete('CASCADE')
 });
 
 exports.down = (knex) => knex.schema.dropTable('movies');

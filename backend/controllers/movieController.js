@@ -40,7 +40,6 @@ class MovieController {
       return error;
     }
   }
-
 }
 
 module.exports = MovieController
