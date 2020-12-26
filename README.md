@@ -1,5 +1,7 @@
 ## **Moviemoji** :zombie:
 
+![Node.js CI](https://github.com/XandeCoding/Moviemoji/workflows/Node.js%20CI/badge.svg?branch=main)
+
 ## **Descrição**
 
 Um projeto que propõe uma forma de avaliar filmes de forma diferente focado em saber a experiência que o usuário teve em relação usando emojis comuns para avaliar se o filme foi bom, ruim, ótimo, nojento, fofo, amedrontador e outras possibilidades também.
