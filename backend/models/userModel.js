@@ -1,39 +1,41 @@
 const Database = require('../configs/database')
 
 class UserModel {
-  static TABLE_NAME = 'users'
+  static getTableName() {
+    return 'users';
+  }
 
   static async insert(data) {
     try {
-      return await Database(UserModel.TABLE_NAME)
+      return await Database(UserModel.getTableName())
         .insert(data)
-    } catch(error) {
+    } catch (error) {
       return error;
     }
   }
 
   static async getAll() {
     try {
-      return await Database(UserModel.TABLE_NAME)
-    } catch(error) {
+      return await Database(UserModel.getTableName())
+    } catch (error) {
       return error
     }
   }
 
   static async get(id) {
     try {
-      return await Database(UserModel.TABLE_NAME)
+      return await Database(UserModel.getTableName())
         .where({ id })
         .select('*')
         .limit(1)
-    } catch(error) {
+    } catch (error) {
       return error;
     }
   }
 
   static async delete(id) {
     try {
-      return await Database(UserModel.TABLE_NAME)
+      return await Database(UserModel.getTableName())
         .where({ id })
         .limit(1)
         .del()
@@ -44,7 +46,7 @@ class UserModel {
 
   static async update(id, data) {
     try {
-      return await Database(MovieModel.TABLE_NAME)
+      return await Database(MovieModel.getTableName())
         .where({ id })
         .limit(1)
         .update(data)

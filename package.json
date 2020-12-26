@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./backend/index.js",
-    "serve": "nodemon ./backend/index.js localhost 3000",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./backend/start.js",
+    "serve": "nodemon ./backend/start.js localhost 3000",
+    "test": "lab -v ./backend/tests/*.test.js",
     "create-migrate": "knex migrate:make user_grades",
     "up-migrate": "knex migrate:latest"
   },
@@ -21,14 +21,16 @@
   },
   "homepage": "https://github.com/XandeCoding/Moviemoji#readme",
   "dependencies": {
-    "@hapi/hapi": "^20.0.2",
-    "hapi-auto-route": "^3.0.4",
-    "knex": "^0.21.14",
+    "@hapi/hapi": "^20.0.3",
+    "knex": "^0.21.15",
     "objection": "^2.2.3",
-    "pg": "^8.5.1"
+    "pg": "^8.5.1",
+    "wurst": "^5.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.13.0",
+    "@hapi/code": "^8.0.2",
+    "@hapi/lab": "^24.1.0",
+    "eslint": "^7.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "nodemon": "^2.0.6",

@@ -1,39 +1,41 @@
 const Database = require('../configs/database')
 
 class GradeModel {
-  static TABLE_NAME = 'grades'
+  static getTableName() {
+    return 'grades'
+  }
 
   static async insert(data) {
     try {
-      return await Database(GradeModel.TABLE_NAME)
+      return await Database(GradeModel.getTableName())
         .insert(data)
-    } catch(error) {
+    } catch (error) {
       return error;
     }
   }
 
   static async getAll() {
     try {
-      return await Database(GradeModel.TABLE_NAME)
-    } catch(error) {
+      return await Database(GradeModel.getTableName())
+    } catch (error) {
       return error
     }
   }
 
   static async get(id) {
     try {
-      return await Database(GradeModel.TABLE_NAME)
+      return await Database(GradeModel.getTableName())
         .where({ id })
         .select('*')
         .limit(1)
-    } catch(error) {
+    } catch (error) {
       return error;
     }
   }
 
   static async delete(id) {
     try {
-      return await Database(GradeModel.TABLE_NAME)
+      return await Database(GradeModel.getTableName())
         .where({ id })
         .limit(1)
         .del()
@@ -44,7 +46,7 @@ class GradeModel {
 
   static async update(id, data) {
     try {
-      return await Database(GradeModel.TABLE_NAME)
+      return await Database(GradeModel.getTableName())
         .where({ id })
         .limit(1)
         .update(data)
