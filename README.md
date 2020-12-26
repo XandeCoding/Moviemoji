@@ -1,6 +1,4 @@
-## **Moviemoji** :zombie:
-
-![Node.js CI](https://github.com/XandeCoding/Moviemoji/workflows/Node.js%20CI/badge.svg?branch=main)
+## **Moviemoji** :zombie: ![Node.js CI](https://github.com/XandeCoding/Moviemoji/workflows/Node.js%20CI/badge.svg?branch=main)
 
 ## **Descrição**
 
