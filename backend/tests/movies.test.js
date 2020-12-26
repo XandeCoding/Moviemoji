@@ -41,4 +41,39 @@ describe('Testando Rotas de Movies', () => {
 
     expect(res.statusCode).to.equal(200);
   });
+
+  it('Pegar todos os filmes', async () => {
+    const res = await server.inject({
+      method: 'GET',
+      url: '/movies'
+    })
+
+    expect(res.statusCode).to.equal(200);
+  });
+
+  it('Deletar um filme', async () => {
+    const res = await server.inject({
+      method: 'DELETE',
+      url: '/movies/1'
+    })
+
+    expect(res.statusCode).to.equal(200);
+  });
+
+  it('Editar um filme', async () => {
+    const res = await server.inject({
+      method: 'PUT',
+      url: '/movies/1',
+      payload: {
+        name: 'Forrest Gump',
+        description: `Tom Hanks estrela como Forrest Gump, um homem ingênuo que
+          se vê envolvido em quase todos os principais eventos das décadas de 60 e 70.`,
+        gender: 'Comédias românticas / Drama',
+        image: 'none'
+      }
+    });
+
+    expect(res.statusCode).to.equal(200);
+  })
+  
 });

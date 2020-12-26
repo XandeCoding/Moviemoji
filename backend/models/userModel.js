@@ -46,7 +46,7 @@ class UserModel {
 
   static async update(id, data) {
     try {
-      return await Database(MovieModel.getTableName())
+      return await Database(UserModel.getTableName())
         .where({ id })
         .limit(1)
         .update(data)
