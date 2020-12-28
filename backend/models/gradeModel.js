@@ -29,7 +29,17 @@ class GradeModel {
         .select('*')
         .limit(1)
     } catch (error) {
-      return error;
+      return error
+    }
+  }
+
+  static async getByMovie(movieId) {
+    try {
+      return await Database(GradeModel.getTableName())
+        .where({ movieId })
+        .select('*')
+    } catch (error) {
+      return error
     }
   }
 

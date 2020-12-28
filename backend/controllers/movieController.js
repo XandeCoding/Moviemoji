@@ -36,7 +36,7 @@ class MovieController {
         })
 
         return Promise.all(moviesPromise).then(([moviesData]) => {
-          return resolve(moviesData.filter((movie) => { return movie }))
+          return resolve(moviesData)
         });
       }).catch((error) => {
         reject(error)

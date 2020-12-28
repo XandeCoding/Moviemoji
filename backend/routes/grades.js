@@ -27,6 +27,16 @@ gradeRouter.push({
 })
 
 gradeRouter.push({
+  method: 'GET',
+  path: '/gradesByMovie/{id}',
+  handler: async (req, res) => {
+    const { id } = req.params;
+
+    return res.response(await GradeController.getGradeByMovie(id)).code(200)
+  }
+})
+
+gradeRouter.push({
   method: 'DELETE',
   path: '/grades/{id}',
   handler: async (req, res) => {
@@ -46,6 +56,5 @@ gradeRouter.push({
     return res.response(await GradeController.updateGrade(id, payload)).code(200)
   }
 })
-
 
 module.exports = gradeRouter

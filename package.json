@@ -7,8 +7,10 @@
     "start": "node ./backend/start.js",
     "serve": "nodemon ./backend/start.js localhost 3000",
     "test": "lab -v ./backend/tests/*.test.js",
-    "create-migrate": "knex migrate:make user_grades",
-    "up-migrate": "knex migrate:latest"
+    "create-migrate": "knex migrate:make grades",
+    "up-migrate": "knex migrate:latest",
+    "down-migrate": "knex migrate:rollback"
+
   },
   "repository": {
     "type": "git",

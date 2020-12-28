@@ -25,6 +25,14 @@ class GradeController {
     }
   }
 
+  static async getGradeByMovie(movieId) {
+    try {
+      return await GradeModel.getByMovie(movieId)
+    } catch (error) {
+      return error
+    }
+  }
+
   static async deleteGrade(id) {
     try {
       return await GradeModel.delete(id)
