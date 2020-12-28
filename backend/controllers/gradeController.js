@@ -3,6 +3,9 @@ const GradeModel = require('../models/gradeModel')
 class GradeController {
   static async insertGrade(data) {
     try {
+      if (GradeModel.checkIfUserVotedInMovie(data.movieId, data.userId)) {
+        return null;
+      }
       return await GradeModel.insert(data)
     } catch (error) {
       return error;
@@ -41,9 +44,9 @@ class GradeController {
     }
   }
 
-  static async updateGrade(id, data) {
+  static async updateGrade(data) {
     try {
-      return await GradeModel.update(id, data)
+      return await GradeModel.update(data.movieId, data.userId, data)
     } catch (error) {
       return error;
     }

@@ -37,23 +37,12 @@ gradeRouter.push({
 })
 
 gradeRouter.push({
-  method: 'DELETE',
-  path: '/grades/{id}',
-  handler: async (req, res) => {
-    const { id } = req.params
-
-    return res.response(await GradeController.deleteGrade(id)).code(200)
-  }
-})
-
-gradeRouter.push({
   method: 'PUT',
-  path: '/grades/{id}',
+  path: '/grades',
   handler: async (req, res) => {
-    const { id } = req.params
     const { payload } = req
 
-    return res.response(await GradeController.updateGrade(id, payload)).code(200)
+    return res.response(await GradeController.updateGrade(payload)).code(200)
   }
 })
 

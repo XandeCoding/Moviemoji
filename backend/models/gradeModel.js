@@ -54,12 +54,23 @@ class GradeModel {
     }
   }
 
-  static async update(id, data) {
+  static async update(movieId, userId, data) {
     try {
       return await Database(GradeModel.getTableName())
-        .where({ id })
+        .where({ movieId, userId })
         .limit(1)
         .update(data)
+    } catch (error) {
+      return error
+    }
+  }
+
+  static async checkIfUserVotedInMovie(movieId, userId) {
+    try {
+      return await Database(GradeModel.getTableName())
+        .where({ movieId, userId })
+        .limit(1)
+        .select('*')
     } catch (error) {
       return error
     }
