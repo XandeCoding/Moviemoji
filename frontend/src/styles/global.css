@@ -12,6 +12,6 @@ html {
     background-color: #fff;
 }
 
-button {
+button, select, option {
   font-family: 'Amaranth', sans-serif;
 }
