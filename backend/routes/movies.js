@@ -6,7 +6,7 @@ movieRouter.push({
   method: 'POST',
   path: '/movies',
   handler: async (req, res) => {
-    const { payload } = req;
+    const { payload } = req
 
     return res.response(await MovieController.insertMovie(payload)).code(200);
   }
@@ -23,6 +23,19 @@ movieRouter.push({
     }
 
     return res.response(await MovieController.getMovie(id)).code(200)
+  }
+})
+
+movieRouter.push({
+  method: 'GET',
+  path: '/movies/search',
+  handler: async (req, res) => {
+    const { name, description, gender } = req.query;
+    const results = await MovieController.searchMovies(
+      `${name || ''} ${description || ''} ${gender || ''}`
+    )
+
+    return res.response(results).code(200)
   }
 })
 
@@ -46,6 +59,5 @@ movieRouter.push({
     return res.response(await MovieController.updateMovie(id, payload)).code(200)
   }
 })
-
 
 module.exports = movieRouter

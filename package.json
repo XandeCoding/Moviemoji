@@ -22,9 +22,11 @@
   "homepage": "https://github.com/XandeCoding/Moviemoji#readme",
   "dependencies": {
     "@hapi/hapi": "^20.0.3",
+    "@lukeed/uuid": "^2.0.0",
     "knex": "^0.21.15",
     "objection": "^2.2.3",
     "pg": "^8.5.1",
+    "sonic-channel": "^1.2.6",
     "wurst": "^5.0.1"
   },
   "devDependencies": {

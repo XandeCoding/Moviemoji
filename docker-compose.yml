@@ -14,30 +14,30 @@ services:
   #   ports:
   #     - '3000:3000'
 
-  postgres-api:
-    container_name: postgres-api
-    image: postgres:13
-    restart: unless-stopped
-    volumes:
-      - ./data/postgres:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_PASSWORD: moviemoji
-    networks:
-      - app-net
-  
-  # sonic-api:
-  #   container_name: sonic-api
-  #   image: valeriansaliou/sonic:v1.3.0
+  # postgres-api:
+  #   container_name: postgres-api
+  #   image: postgres:13
   #   restart: unless-stopped
-  #   ports:
-  #     - 1491:1491
   #   volumes:
-  #     - ./sonic/config.cfg:/etc/sonic.cfg
-  #     - ./sonic/store/:/var/lib/sonic/store/
+  #     - ./data/postgres:/var/lib/postgresql/data
+  #   ports:
+  #     - 5432:5432
+  #   environment:
+  #     POSTGRES_PASSWORD: moviemoji
   #   networks:
   #     - app-net
+
+  sonic-api:
+    container_name: sonic-api
+    image: valeriansaliou/sonic:v1.3.0
+    restart: unless-stopped
+    ports:
+      - 1491:1491
+    volumes:
+      - ./sonic/config.cfg:/etc/sonic.cfg
+      - ./sonic/store/:/var/lib/sonic/store/
+    networks:
+      - app-net
 
 networks:
   app-net:

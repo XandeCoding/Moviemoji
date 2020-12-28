@@ -1,9 +1,12 @@
 const MovieModel = require('../models/movieModel')
+const SonicModel = require('../models/sonicModel')
 
 class MovieController {
   static async insertMovie(data) {
     try {
-      return await MovieModel.insert(data)
+      const result = await MovieModel.insert(data)
+      await SonicModel.insertMovie(result[0], data)
+      return result
     } catch (error) {
       return error;
     }
@@ -23,6 +26,24 @@ class MovieController {
     } catch (error) {
       return error;
     }
+  }
+
+  static searchMovies(queryString) {
+    return new Promise((resolve, reject) => {
+      SonicModel.searchMovies(queryString).then((moviesFinded) => {
+        const moviesPromise = moviesFinded.map((movie) => {
+          return MovieModel.get(movie.split('id:')[1])
+        })
+
+        return Promise.all(moviesPromise).then(([moviesData]) => {
+          return resolve(moviesData.filter((movie) => { return movie }))
+        });
+      }).catch((error) => {
+        reject(error)
+      }).catch((error) => {
+        reject(error)
+      })
+    })
   }
 
   static async deleteMovie(id) {
