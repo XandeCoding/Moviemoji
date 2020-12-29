@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:lts-buster-slim
 RUN mkdir -p /home/node/api/node_modules && \
     chown -R node:node /home
 WORKDIR /home/node/api

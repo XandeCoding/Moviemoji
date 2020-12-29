@@ -1,7 +1,9 @@
 import React from "react"
 import styled from 'styled-components'
+import MovieContainer from '../providers/movieContainer'
 import Navbar from '../components/navbar'
 import SelectGender from '../components/selectGender'
+import MovieGallery from '../components/movieGallery'
 
 const TitleBarWrapper = styled.div `
   display: flex;
@@ -25,17 +27,20 @@ const BorderBottom = styled.div `
   border-bottom: 1px solid #A4B0BE;
 `
 
-
 function Home() {
+
   return (
-  <div>
-    <Navbar />
-    <TitleBarWrapper>
-      <Title>Filmes em Alta</Title>
-      <SelectGender />
-    </TitleBarWrapper>
-    <BorderBottom />
-  </div>
+    <MovieContainer.Provider>
+      <>
+        <Navbar />
+        <TitleBarWrapper>
+          <Title>Filmes em Alta</Title>
+          <SelectGender />
+        </TitleBarWrapper>
+        <BorderBottom />
+        <MovieGallery />
+      </>
+    </MovieContainer.Provider>
   )
 }
 

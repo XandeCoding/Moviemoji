@@ -10,7 +10,6 @@
     "create-migrate": "knex migrate:make grades",
     "up-migrate": "knex migrate:latest",
     "down-migrate": "knex migrate:rollback"
-
   },
   "repository": {
     "type": "git",
@@ -27,8 +26,8 @@
     "knex": "^0.21.15",
     "objection": "^2.2.3",
     "pg": "^8.5.1",
-    "sqlite3": "^5.0.0",
     "sonic-channel": "^1.2.6",
+    "sqlite3": "^5.0.0",
     "wurst": "^5.0.1"
   },
   "devDependencies": {

@@ -4,7 +4,10 @@ const wurst = require('wurst');
 
 let isInitialized = false;
 const server = Hapi.server({
-  port: 3000
+  port: 3000,
+  routes: {
+    cors: true
+  }
 })
 
 exports.start = async (justInitialize = false) => {

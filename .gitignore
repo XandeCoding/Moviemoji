@@ -3,6 +3,7 @@
 
 ### Project ###
 .nvimlog
+/data
 
 ### Node ###
 # Logs

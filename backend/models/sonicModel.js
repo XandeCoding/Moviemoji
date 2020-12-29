@@ -1,5 +1,3 @@
-const { v4: uuid } = require('@lukeed/uuid');
-
 const { Ingest, Search } = require('sonic-channel');
 
 const channelIngest = new Ingest({
