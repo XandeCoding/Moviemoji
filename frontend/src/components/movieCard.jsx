@@ -10,6 +10,7 @@ const WrapperCard = styled.div `
   transition: 0.3s;
   border-radius: 0.7rem;
   background-color: #2ED5B7;
+  margin: 0.5rem;
 
   img {
     /* border-radius: 0.5rem; */
@@ -39,7 +40,7 @@ const WrapperDescription = styled.div `
 
 function MovieCard({movie}) {
   if (!movie) return
-  const description = movie.description.slice(0, 180) + ' ...'
+  const description = movie.description.slice(0, 120) + ' ...'
 
   return (
     <WrapperCard>

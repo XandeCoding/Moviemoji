@@ -1,8 +1,12 @@
 import environment from '../environment'
+import buildUrl from 'build-url';
 
 class MovieService {
-  static getUrl() {
-    return `${environment.apiUrl}/movies`
+  static getUrl(params, path) {
+    return buildUrl(environment.apiUrl, {
+      path: path ? `movies/${ path }` : 'movies',
+      queryParams: params
+    })
   }
 
   // TODO: add pagination
@@ -11,25 +15,29 @@ class MovieService {
       return fetch(MovieService.getUrl(), {
         crossDomain:true,
         method: 'GET',
-        headers: {'Content-Type':'application/json'},
-      }).then((response) => response.json())
-        .then((responseJson) => {
-          console.log(responseJson)
+        headers: {'Content-Type':'application/json'}
+      }).then((response) => {
+        if (response.status !== 200) return;
+
+        return response.json().then((responseJson) => {
           return resolve(responseJson)
+        }).catch((error) => { return reject(error) })
       }).catch((error) => { return reject(error) })
     })
   }
 
-  static searchMovies() {
+  static searchMovies(search) {
     return new Promise((resolve, reject) => {
-      return fetch(`${ MovieService.getUrl() }/search`, {
+      return fetch(MovieService.getUrl({ search }, 'search'), {
         crossDomain:true,
         method: 'GET',
-        headers: {'Content-Type':'application/json'},
-      }).then((response) => response.json())
-        .then((responseJson) => {
-          console.log(responseJson)
+        headers: {'Content-Type':'application/json'}
+      }).then((response) => {
+        if (response.status !== 200) return;
+
+        return response.json().then((responseJson) => {
           return resolve(responseJson)
+        }).catch((error) => { return reject(error) })
       }).catch((error) => { return reject(error) })
     })
   }

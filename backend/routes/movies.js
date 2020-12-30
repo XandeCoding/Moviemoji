@@ -32,7 +32,9 @@ movieRouter.push({
   handler: async (req, res) => {
     const { search } = req.query;
     const results = await MovieController.searchMovies(search)
-
+    if (!results) {
+      return res.response(null).code(400)
+    }
     return res.response(results).code(200)
   }
 })

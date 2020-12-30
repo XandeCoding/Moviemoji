@@ -6,8 +6,9 @@ import MovieCard from '../components/movieCard'
 
 const WrapperGallery = styled.div `
   display: flex;
-  padding: 2rem;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1.5rem;
 
   input[type="text"]::placeholder {
     color: #fff;
@@ -33,4 +34,4 @@ function MovieGallery() {
   )
 }
 
-export default React.memo(MovieGallery)
+export default MovieGallery

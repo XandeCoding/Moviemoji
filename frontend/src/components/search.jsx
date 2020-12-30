@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from 'styled-components'
-import Observable from 'zen-observable'
 import { SearchAlt2 } from '@styled-icons/boxicons-regular'
+import MovieContainer from '../providers/movieContainer'
 import MovieService from '../services/movieService'
 
 
@@ -37,11 +37,25 @@ const SearchIcon = styled(SearchAlt2) `
 
 function Search() {
   const [ search, setSearch ] = useState('')
+  const MovieProvider = MovieContainer.useContainer()
 
   const onChangeSearch = (event) => {
-    console.log("search change", event.target.value)
-    // TODO: ADD RXJS OR OTHER REACTIVE LIB TO MINIMIZE SEARCHS
-    setSearch(event.target.value)
+    const searchedValue = event.target.value;
+    setSearch(searchedValue)
+
+    if (!searchedValue) {
+      MovieService.getMovies(searchedValue).then((result) => {
+        if (result) {
+          MovieProvider.addMovie(result)
+        }
+      })
+    } else {
+      MovieService.searchMovies(searchedValue).then((result) => {
+        if (result) {
+          MovieProvider.searchedMovies(result)
+        }
+      })
+    }
   }
 
 
