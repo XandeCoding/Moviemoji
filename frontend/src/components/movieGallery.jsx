@@ -4,11 +4,10 @@ import MovieService from "../services/movieService"
 import MovieContainer from '../providers/movieContainer'
 import MovieCard from '../components/movieCard'
 
-const WrapperCard = styled.div `
+const WrapperGallery = styled.div `
   display: flex;
-  text-align: center;
-  align-self: center;
-  justify-content: flex-end;
+  padding: 2rem;
+  justify-content: space-evenly;
 
   input[type="text"]::placeholder {
     color: #fff;
@@ -20,17 +19,17 @@ function MovieGallery() {
 
   useEffect(() => {
     MovieService.getMovies().then((result) => {
-        MovieProvider.addMovie(result)
+      MovieProvider.addMovie(result)
     })
   }, [])
 
   return (
-    <WrapperCard>
+    <WrapperGallery>
         {
           MovieProvider.movies.map((movie) => <MovieCard
             movie={ movie } />)
         }
-    </WrapperCard>
+    </WrapperGallery>
   )
 }
 

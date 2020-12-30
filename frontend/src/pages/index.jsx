@@ -7,11 +7,11 @@ import MovieGallery from '../components/movieGallery'
 
 const TitleBarWrapper = styled.div `
   display: flex;
-  position: absolute;
+  position: relative;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  margin-top: 8.5rem;
+  margin-top: 6rem;
   padding: 0rem 2rem;
 `
 const Title = styled.h1 `
@@ -22,8 +22,7 @@ const Title = styled.h1 `
 const BorderBottom = styled.div `
   display: block;
   width: 100%;
-  position: absolute;
-  margin-top: 12.5rem;
+  margin-top: 1rem;
   border-bottom: 1px solid #A4B0BE;
 `
 

@@ -3,10 +3,9 @@ import styled from 'styled-components'
 import Search from './search'
 
 const BackgroundNav = styled.div `
-  position: absolute;
   display: flex;
   margin: 0 auto;
-  width: 100%;
+  width: 100% !important;
   height: 4rem;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;

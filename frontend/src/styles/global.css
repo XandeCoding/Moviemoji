@@ -8,8 +8,9 @@
 
 html {
     font-family: 'Amaranth', sans-serif;
-    /* font-family: 'Barlow', sans-serif */
     background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 button, select, option {

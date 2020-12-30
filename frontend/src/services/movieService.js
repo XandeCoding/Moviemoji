@@ -19,6 +19,20 @@ class MovieService {
       }).catch((error) => { return reject(error) })
     })
   }
+
+  static searchMovies() {
+    return new Promise((resolve, reject) => {
+      return fetch(`${ MovieService.getUrl() }/search`, {
+        crossDomain:true,
+        method: 'GET',
+        headers: {'Content-Type':'application/json'},
+      }).then((response) => response.json())
+        .then((responseJson) => {
+          console.log(responseJson)
+          return resolve(responseJson)
+      }).catch((error) => { return reject(error) })
+    })
+  }
 }
 
 export default MovieService

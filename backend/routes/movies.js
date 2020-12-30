@@ -30,10 +30,8 @@ movieRouter.push({
   method: 'GET',
   path: '/movies/search',
   handler: async (req, res) => {
-    const { name, description, gender } = req.query;
-    const results = await MovieController.searchMovies(
-      `${name || ''} ${description || ''} ${gender || ''}`
-    )
+    const { search } = req.query;
+    const results = await MovieController.searchMovies(search)
 
     return res.response(results).code(200)
   }
