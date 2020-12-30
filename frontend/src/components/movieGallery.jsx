@@ -20,7 +20,7 @@ function MovieGallery() {
 
   useEffect(() => {
     MovieService.getMovies().then((result) => {
-      MovieProvider.addMovie(result)
+      MovieProvider.setAllMovies(result)
     })
   }, [])
 
@@ -28,7 +28,9 @@ function MovieGallery() {
     <WrapperGallery>
         {
           MovieProvider.movies.map((movie) => <MovieCard
-            movie={ movie } />)
+            key={ movie.id }
+            movie={ movie }
+          />)
         }
     </WrapperGallery>
   )

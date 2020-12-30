@@ -46,13 +46,13 @@ function Search() {
     if (!searchedValue) {
       MovieService.getMovies(searchedValue).then((result) => {
         if (result) {
-          MovieProvider.addMovie(result)
+          MovieProvider.setAllMovies(result)
         }
       })
     } else {
       MovieService.searchMovies(searchedValue).then((result) => {
         if (result) {
-          MovieProvider.searchedMovies(result)
+          MovieProvider.setAllMovies(result)
         }
       })
     }

@@ -2,24 +2,21 @@ import { useState } from "react"
 import { createContainer } from "unstated-next"
 
 function useMovies(initialState = []) {
-    let [ movies, setMovies ] = useState(initialState)
-    // TODO: WHEN ADD MOVIES ADD TOO A KEY IN A PROPS USING UUID
-    // ADD FUNCTION TO CLEAR STATE TO RESOLVE BUGS BECAUSE WITHOUT OF KEY
-    let addMovie = (movieToAdd) => setMovies(movies.concat(movieToAdd))
-    let searchedMovies = (moviesSearched) => {
-        const moviesToUpdate = moviesSearched.filter((movieSearched) => {
-            return movies.some((actualMovie) => {
-                return actualMovie.id === movieSearched.id
-            })
-        })
-
-        setMovies(moviesToUpdate)
+    const [ movies, setMovies ] = useState(initialState)
+    
+    const addMovies = (moviesToAdd) => {
+        setMovies(movies.concat(moviesToAdd))
     }
-    let removeMovie = (movieToRemove) => setMovies(
+
+    const setAllMovies = (moviesToSet) => {
+        setMovies(moviesToSet)
+    }
+
+    const removeMovie = (movieToRemove) => setMovies(
         movies.filter((movie) => { return movie.id !== movieToRemove.id })
     )
 
-    return { movies, addMovie, searchedMovies, removeMovie }
+    return { movies, addMovies, setAllMovies, removeMovie }
 }
 
 const MoviesContainer = createContainer(useMovies)
