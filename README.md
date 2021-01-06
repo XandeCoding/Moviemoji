@@ -32,7 +32,9 @@ Um projeto que propõe uma forma de avaliar filmes de forma diferente focado em 
 
 Para rodar todo o software basta ter o docker compose instalado e usar o comando
 
-docker-compose up
+_docker-compose up_
+
+Caso não tenha pode ser usado esse guia para rodar o backend e o frontend só mudando a pasta onde é executado o npm install e o npm start.
 
 _**Obs.:** No Ubuntu 20 com instalação mínima._
 
