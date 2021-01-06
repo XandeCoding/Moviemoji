@@ -10,9 +10,11 @@ Um projeto que propõe uma forma de avaliar filmes de forma diferente focado em 
 
 [**Hapi.js:**](https://hapi.dev/) O Hapi.js é um ambiente de execução Javascript server-side
 
-[**PostgreeSQL:**](https://www.postgresql.org/) PostgreSQL é um sistema gerenciador de banco de dados objeto relacional, desenvolvido como projeto de código aberto.
+[**PostgreeSQL:**](https://www.postgresql.org/) PostgreSQL é um sistema gerenciador de banco de dados objeto relacional, desenvolvido como projeto de código aberto que será usado para deixar o sistema para produção.
 
-[**Sequelize:**](https://sequelize.org/) O Sequelize é um ORM (Object-Relational Mapper) para Node. js, que tem suporte aos bancos de dados PostgreSQL, MariaDB, MySQL, SQLite e MSSQL, como ORM ele faz o mapeamento de dados relacionais (tabelas, colunas e linhas) para objetos Javascript.
+[**Knex:**](http://knexjs.org/) Knex é um query builder para sql que pode ser usado tanto no Node.JS quanto no browser(o que não é uma boa ideia na maioria dos casos), para o nosso caso ele serviu muito bem pois além de permitir criarmos as queries da forma que necessitarmos ele cria as tabelas e também faz previne falhas de segurança como SQL injection.
+
+[**Sqlite:**](https://www.sqlite.org/index.html) SQLite é uma biblioteca em linguagem C que implementa um banco de dados SQL embutido, a qual vamos usar para a propotipagem do projeto e realizar os testes iniciais.
 
 [**ESLint:**](https://eslint.org/) ESLint é uma ferramenta de análise de código estática para identificar padrões problemáticos encontrados no código JavaScript.
 
@@ -28,10 +30,9 @@ Um projeto que propõe uma forma de avaliar filmes de forma diferente focado em 
 
 ## **Instalação**
 
-Rodar banco de dados via docker: _**docker run --name moviemoji -e POSTGRES_PASSWORD=moviemoji -p 5432:5432 -d postgres**_
+Para rodar todo o software basta ter o docker compose instalado e usar o comando
 
-User: postgres
-Password: moviemoji
+docker-compose up
 
 _**Obs.:** No Ubuntu 20 com instalação mínima._
 

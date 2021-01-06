@@ -1,19 +1,32 @@
 version: '3'
 services:
-  # node-api:
-  #   container_name: node-api
-  #   build: '.'
-  #   restart: always
-  #   volumes:
-  #     - .:/home/node/api
-  #     - /home/node/api/node_modules
-  #   networks:
-  #     - app-net
-  #   ports:
-  #     - '3000:3000'
-    # depends_on:
-    #   - postgres-api
-    #   - sonic-api
+  node-api:
+    container_name: node-api
+    build: '.'
+    restart: always
+    volumes:
+      - .:/home/node/api
+      - /home/node/api/node_modules
+    networks:
+      - app-net
+    ports:
+      - '3000:3000'
+    environment:
+      - SONIC_URL=sonic-api
+    depends_on:
+      # - postgres-api
+      - sonic-api
+  sonic-api:
+    container_name: sonic-api
+    image: valeriansaliou/sonic:v1.3.0
+    restart: unless-stopped
+    ports:
+      - 1491:1491
+    volumes:
+      - ./sonic/config.cfg:/etc/sonic.cfg
+      - ./sonic/store/:/var/lib/sonic/store/
+    networks:
+      - app-net
 
   # postgres-api:
   #   container_name: postgres-api
@@ -28,17 +41,6 @@ services:
   #   networks:
   #     - app-net
 
-  sonic-api:
-    container_name: sonic-api
-    image: valeriansaliou/sonic:v1.3.0
-    restart: unless-stopped
-    ports:
-      - 1491:1491
-    volumes:
-      - ./sonic/config.cfg:/etc/sonic.cfg
-      - ./sonic/store/:/var/lib/sonic/store/
-    networks:
-      - app-net
 
 networks:
   app-net:

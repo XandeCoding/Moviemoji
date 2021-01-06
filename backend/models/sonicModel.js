@@ -1,13 +1,16 @@
 const { Ingest, Search } = require('sonic-channel');
+const environment = require('../configs/environment');
 
 let channelIsAvailable = false;
+const { SONIC_URL } = environment;
+
 const channelIngest = new Ingest({
-  host: 'localhost',
+  host: SONIC_URL,
   port: 1491,
   auth: 'SecretPassword'
 })
 const channelSearch = new Search({
-  host: 'localhost',
+  host: SONIC_URL,
   port: 1491,
   auth: 'SecretPassword'
 })
@@ -21,7 +24,6 @@ channelIngest.connect({})
 
 class SonicModel {
   static async insertMovie(id, data) {
-    console.log("chan", channelIsAvailable);
     if (!channelIsAvailable) return false;
 
     try {

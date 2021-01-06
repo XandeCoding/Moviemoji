@@ -40,7 +40,7 @@ const WrapperDescription = styled.div `
 
 function MovieCard({movie}) {
   if (!movie) return
-  const description = movie.description.slice(0, 120) + ' ...'
+  const description = movie.description.slice(0, 120) + '...'
 
   return (
     <WrapperCard>

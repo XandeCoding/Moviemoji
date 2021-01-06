@@ -3,6 +3,7 @@ const { expect } = require('@hapi/code');
 
 const {
   afterEach, beforeEach, describe, it
+// eslint-disable-next-line no-multi-assign
 } = exports.lab = Lab.script();
 const { start } = require('../index');
 
@@ -74,6 +75,5 @@ describe('Testando Rotas de Movies', () => {
     });
 
     expect(res.statusCode).to.equal(200);
-  })
-  
+  });
 });
