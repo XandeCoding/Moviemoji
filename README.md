@@ -12,7 +12,7 @@ Um projeto que propõe uma forma de avaliar filmes de forma diferente focado em 
 
 [**PostgreeSQL:**](https://www.postgresql.org/) PostgreSQL é um sistema gerenciador de banco de dados objeto relacional, desenvolvido como projeto de código aberto que será usado para deixar o sistema para produção.
 
-[**Knex:**](http://knexjs.org/) Knex é um query builder para sql que pode ser usado tanto no Node.JS quanto no browser(o que não é uma boa ideia na maioria dos casos), para o nosso caso ele serviu muito bem pois além de permitir criarmos as queries da forma que necessitarmos ele cria as tabelas e também faz previne falhas de segurança como SQL injection.
+[**Knex:**](http://knexjs.org/) Knex é um query builder para sql que pode ser usado tanto no Node.JS quanto no browser(o que não é uma boa ideia na maioria dos casos), para o nosso caso ele serviu muito bem pois além de permitir criarmos as queries da forma que necessitarmos ele cria as tabelas e também previne falhas de segurança como SQL injection.
 
 [**Sqlite:**](https://www.sqlite.org/index.html) SQLite é uma biblioteca em linguagem C que implementa um banco de dados SQL embutido, a qual vamos usar para a propotipagem do projeto e realizar os testes iniciais.
 
@@ -59,7 +59,6 @@ npm start
 
 ## **Integrantes do grupo:**
 - Alexandre Fernandes *(XandeCoding)*
-- Arthur Castro *(arthur-es)*
 - Fabiano Gomes *(fabianogomess)*
 - Miguel *(miguelfesanbar)*
 - Raul Victor *(raulvdias)*
